@@ -8,3 +8,13 @@
     width: 18vw;
     height: 600px;
 }
+.inner-register-content>form{
+    display: block;
+}
+form>div>label{
+    font-size: 32px;
+    text-transform: uppercase;
+}
+form>div>input{
+    font-size: 18px;
+}

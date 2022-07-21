@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'; 
+import { RegisterComponent } from '../register/register.component';
 
 @Component({
   selector: 'app-content',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./content.component.scss']
 })
 export class ContentComponent implements OnInit {
+  static userForm: any;
+  
+  lolkek1: any;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(json => console.log(json))
   }
-
 }
