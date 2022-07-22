@@ -14,7 +14,7 @@
                 <input id="amount" type="text" formControlName="amount">
             </div>
 
-            <button type="submit" [disabled]="!userForm.valid"  routerLink="/">Register!</button>
+            <button type="submit" [disabled]="!userForm.valid"  (click)="onSubmit()">Register!</button>
         </form>
     </div>
 </div>
