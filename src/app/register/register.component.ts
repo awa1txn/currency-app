@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Validators } from '@angular/forms';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { UserService } from '../user.service'
 
 @Component({
@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   });
 
   showUserData = false;
-  constructor(private fb: FormBuilder, private userService: UserService) { }
+  constructor(private fb: UntypedFormBuilder, private userService: UserService) { }
 
   ngOnInit(): void {
   }
