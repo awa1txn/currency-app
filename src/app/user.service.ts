@@ -16,13 +16,17 @@ const httpOptions = {
 export class UserService {
   constructor(private http: HttpClient) { }
 
-  postContent(nickname: string, moneytype: string, amount: string): Observable<object> {
+  nickname: any = null;
+
+  postContent(nickname: string, amount: number): Observable<object> {
     return this.http.post<object>(API_URL + 'people', {
       nickname,
-      moneytype,
       amount
     }, httpOptions)
 }
+  getContent(e: number): Observable<object[]> {
+    return this.http.get<object[]>(API_URL + `people/${e}`)
+  }
   
 
 }

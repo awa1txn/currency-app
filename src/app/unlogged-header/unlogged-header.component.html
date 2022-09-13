@@ -9,16 +9,7 @@
                     <li routerLink="/contact">contact</li>
                 </ul>
             </li>
-            <li class="profile-nav" *ngIf="isLogged">
-                <ul>
-                    <li><i class="fa-solid fa-bell"></i></li>
-                    <li><i class="fa-solid fa-inbox"></i></li>
-                    <li><i class="fa-brands fa-accessible-icon"></i></li>
-                    <li (click)="isLogged = !isLogged; unLogged = !unLogged"><i class="fa-solid fa-door-open">Exit?</i></li>
-                </ul>
-            </li>
             <li class="un-logged" routerLink="/register">register?</li>
-            
         </ul>
     </div>
 </div>

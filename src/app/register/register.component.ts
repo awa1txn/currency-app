@@ -13,22 +13,31 @@ export class RegisterComponent implements OnInit {
 
   userForm: any = this.fb.group({
     nickname: ['', Validators.required],
-    moneytype: [''],
     amount: ['']
   });
 
   showUserData = false;
-  constructor(private fb: UntypedFormBuilder, private userService: UserService) { }
+  constructor(private fb: UntypedFormBuilder, private userService: UserService) {}
 
   ngOnInit(): void {
   }
 
   onSubmit(): void {
-    const { nickname, moneytype, amount } = this.userForm.value;
-    this.userService.postContent(nickname, moneytype, amount).subscribe({
-      next: data => {
-        console.log(data);
-      }})
+
+    const { nickname, amount } = this.userForm.value;
+    if (typeof(amount) == 'number'){
+      this.userService.postContent(nickname, amount).subscribe({
+        next: 
+        data => {
+          console.log(data);
+          localStorage.setItem('your_name', nickname);
+          localStorage.setItem('your_amount', amount.toString());
+          
+        }
+      })
+      this.userService.nickname = nickname;
+    } else {
+      console.error("amount not is NUMBER!")
+    }
 }
-  
 }

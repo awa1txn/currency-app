@@ -1,0 +1,61 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+SC:wght@300&family=Rubik+Moonrocks&display=swap');
+
+.header{
+    background-color: #252970;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.inner-header{
+    z-index: 1;
+    width: 85vw;
+    height: 20px;
+    color: white;
+
+}
+.inner-header a:any-link{
+    text-decoration: none;
+    color:white
+}
+.inner-header>ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+font-size: 24px;
+font-family: 'Cormorant SC', serif;
+}
+.logo>span{
+position: relative;
+top:20px;
+font-weight: 900;
+left:-32px;
+font-family: 'Rubik Moonrocks', cursive;
+}
+.nav>ul{
+    list-style:none;
+    display: flex;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+}
+.nav>ul>li{
+    margin: 12px 10px;
+    cursor:pointer;
+}
+.profile-nav>ul{
+    list-style: none;
+    display: flex;
+}
+.profile-nav>ul>li{
+    margin: 12px 10px;
+    cursor:pointer;
+}
+.un-logged{
+    margin: 12px 10px;
+    cursor:pointer;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+}
