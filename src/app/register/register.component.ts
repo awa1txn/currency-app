@@ -29,13 +29,14 @@ export class RegisterComponent implements OnInit {
       this.userService.postContent(nickname, amount).subscribe({
         next: 
         data => {
-          console.log(data);
-          localStorage.setItem('your_name', nickname);
-          localStorage.setItem('your_amount', amount.toString());
-          
+          console.log(data)
         }
       })
+      localStorage.setItem('your_name', nickname);
+      localStorage.setItem('your_amount', amount.toString());
       this.userService.nickname = nickname;
+      this.userService.amount = amount
+      this.userService._$loggedIn = true;
     } else {
       console.error("amount not is NUMBER!")
     }

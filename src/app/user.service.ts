@@ -17,6 +17,8 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   nickname: any = null;
+  amount: number = 0;
+  _$loggedIn: boolean = false;
 
   postContent(nickname: string, amount: number): Observable<object> {
     return this.http.post<object>(API_URL + 'people', {
