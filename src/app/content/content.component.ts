@@ -13,13 +13,18 @@ export class ContentComponent implements OnInit {
   constructor(private us: UserService, private ac: AppComponent) {}
   hello_user: any = null;
   hello_user_state = false;
-  user_amount = 0;
+  user_amount: any = '';
 
   ngOnInit(): void {
     this.hello_user = this.us.nickname == null ? localStorage.getItem("your_name") : this.us.nickname
     this.hello_user_state = localStorage.getItem("your_name") == null ? false : true;
-    this.user_amount = this.us.amount
-    console.log(localStorage.getItem("your_name"))
+    if(localStorage.getItem("your_amount") != 'string'){
+      this.user_amount = localStorage.getItem("your_amount")
+    } else {
+      this.user_amount = this.us.amount
+    }
+  
+    console.log(localStorage.getItem("your_amount"))
       Promise.resolve().then(() => {
         if(localStorage.getItem('loggedIn') == null) {
           if(this.us.nickname != null){
