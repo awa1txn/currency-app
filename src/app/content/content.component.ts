@@ -15,11 +15,7 @@ export class ContentComponent implements OnInit {
   
 
   ngOnInit(): void {
-    if(this.us.nickname == null){
-      this.hello_user = localStorage.getItem("your_name")
-    } else {
-      this.hello_user = this.us.nickname
-    };
+    this.hello_user = this.us.nickname == null ? localStorage.getItem("your_name") : this.us.nickname
     this.hello_user_state = localStorage.getItem("your_name") == null ? false : true;
   }
 
