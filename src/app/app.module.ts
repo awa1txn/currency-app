@@ -15,6 +15,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { LoggedHeaderComponent } from './logged-header/logged-header.component';
 import { UnloggedHeaderComponent } from './unlogged-header/unlogged-header.component';
+import { NotificationComponent } from './notification/notification.component';
+import { MailboxComponent } from './mailbox/mailbox.component';
+import { UserprofileComponent } from './userprofile/userprofile.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { UnloggedHeaderComponent } from './unlogged-header/unlogged-header.compo
     RegisterComponent,
     LoginComponent,
     LoggedHeaderComponent,
-    UnloggedHeaderComponent
+    UnloggedHeaderComponent,
+    NotificationComponent,
+    MailboxComponent,
+    UserprofileComponent
   ],
   imports: [
     BrowserModule,

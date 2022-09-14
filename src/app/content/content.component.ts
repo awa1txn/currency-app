@@ -23,8 +23,7 @@ export class ContentComponent implements OnInit {
     } else {
       this.user_amount = this.us.amount
     }
-  
-    console.log(localStorage.getItem("your_amount"))
+    
       Promise.resolve().then(() => {
         if(localStorage.getItem('loggedIn') == null) {
           if(this.us.nickname != null){

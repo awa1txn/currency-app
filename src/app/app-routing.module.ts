@@ -6,6 +6,9 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { MailboxComponent } from './mailbox/mailbox.component'
+import { NotificationComponent } from './notification/notification.component'
+import { UserprofileComponent } from './userprofile/userprofile.component'
 
 const routes: Routes = [
   { path: '', component: ContentComponent, pathMatch: 'full', },
@@ -14,6 +17,9 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'mailbox', component: MailboxComponent},
+  { path: 'notification', component: NotificationComponent},
+  { path: 'userprofile', component: UserprofileComponent}
 
 ];
 
