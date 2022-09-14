@@ -14,6 +14,38 @@ export class ContentComponent implements OnInit {
   hello_user: any = null;
   hello_user_state = false;
   user_amount: any = '';
+  user = {};
+  users:any = [];
+
+
+  wow(): void {
+
+    this.us.getContent().subscribe({
+      next:
+      data => {
+        console.log(data);
+        this.users = data;
+        this.users.forEach((el: any) => {
+          if(el.nickname.includes('hello world')){
+            console.log(true)
+          }
+        });
+      }
+    })
+
+
+
+    // if (localStorage.getItem('your_id') != null){
+    //   this.us.getContent(localStorage.getItem('your_id')).subscribe({
+    //     next:
+    //     data =>{
+    //       this.user = data;
+    //       console.log(this.user)
+    //     }
+    //   })
+    // }else { console.log("you aren't logged in")}
+
+  }
 
   ngOnInit(): void {
     this.hello_user = this.us.nickname == null ? localStorage.getItem("your_name") : this.us.nickname
@@ -23,7 +55,7 @@ export class ContentComponent implements OnInit {
     } else {
       this.user_amount = this.us.amount
     }
-    
+
       Promise.resolve().then(() => {
         if(localStorage.getItem('loggedIn') == null) {
           if(this.us.nickname != null){

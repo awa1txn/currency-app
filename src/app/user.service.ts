@@ -26,8 +26,8 @@ export class UserService {
       amount
     }, httpOptions)
 }
-  getContent(e: number): Observable<object[]> {
-    return this.http.get<object[]>(API_URL + `people/${e}`)
+  getContent(): Observable<object> {
+    return this.http.get<object>(API_URL + `people/`)
   }
   
 

@@ -10,6 +10,7 @@ import { UserService } from '../user.service'
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  
 
   userForm: any = this.fb.group({
     nickname: ['', Validators.required],
@@ -29,7 +30,8 @@ export class RegisterComponent implements OnInit {
       this.userService.postContent(nickname, amount).subscribe({
         next: 
         data => {
-          console.log(data)
+          this.userForm = data;
+          localStorage.setItem('your_id', this.userForm.id);
         }
       })
       localStorage.setItem('your_name', nickname);
