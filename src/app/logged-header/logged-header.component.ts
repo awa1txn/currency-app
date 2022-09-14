@@ -11,5 +11,8 @@ export class LoggedHeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  logout():void {
+    localStorage.clear();
+    window.location.reload();
+  }
 }
