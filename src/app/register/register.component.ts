@@ -18,7 +18,6 @@ export class RegisterComponent implements OnInit {
     password: ['']
   });
 
-  showUserData = false;
   constructor(private fb: UntypedFormBuilder, private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
@@ -43,8 +42,6 @@ export class RegisterComponent implements OnInit {
         
       })
       
-      
-      // this.userService._$loggedIn = true;
     
 }
 }
