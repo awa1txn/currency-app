@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { UntypedFormBuilder } from '@angular/forms';
 import { UserService } from '../user.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -14,33 +15,36 @@ export class RegisterComponent implements OnInit {
 
   userForm: any = this.fb.group({
     nickname: ['', Validators.required],
-    amount: ['']
+    password: ['']
   });
 
   showUserData = false;
-  constructor(private fb: UntypedFormBuilder, private userService: UserService) {}
+  constructor(private fb: UntypedFormBuilder, private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
   }
 
-  onSubmit(): void {
+  async onSubmit(): Promise<void> {
 
-    const { nickname, amount } = this.userForm.value;
-    if (typeof(amount) == 'number'){
-      this.userService.postContent(nickname, amount).subscribe({
-        next: 
-        data => {
-          this.userForm = data;
-          localStorage.setItem('your_id', this.userForm.id);
-        }
+    const { nickname, password } = this.userForm.value;
+      Promise.resolve()
+      .then(x => {
+        this.userService.postContent(nickname, password).subscribe({
+          next: 
+          data => {
+            this.userForm.patchValue(data);
+            localStorage.setItem('your_id', this.userForm.id);
+            console.log(data)
+          }
+        })
       })
-      localStorage.setItem('your_name', nickname);
-      localStorage.setItem('your_amount', amount.toString());
-      this.userService.nickname = nickname;
-      this.userService.amount = amount
-      this.userService._$loggedIn = true;
-    } else {
-      console.error("amount not is NUMBER!")
-    }
+      .then(()=>{
+        setTimeout(()=>this.router.navigate(['/']), 3000)
+        
+      })
+      
+      
+      // this.userService._$loggedIn = true;
+    
 }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'currency-app';
+  constructor() {}
+
 
   _$isLogged = false;
-
 
   ngOnInit(): void {
     

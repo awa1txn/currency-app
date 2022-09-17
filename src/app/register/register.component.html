@@ -1,16 +1,16 @@
 <div class="register-content">
     <div class="inner-register-content">
-        <form [formGroup]="userForm" >
+        <form [formGroup]="userForm">
             <div>                
                 <label for="nickname">Nickname</label>    
                 <input id="nickname" type="text" formControlName="nickname">
             </div>
             <div>
-                <label for="amount">amount</label>    
-                <input id="amount" type="number" formControlName="amount">
+                <label for="password">Password</label>    
+                <input id="password" type="text" formControlName="password">
             </div>
             <p>already <a routerLink="/login"><span>registered?</span></a></p>
-            <button type="submit"  (click)="onSubmit()" routerLink="/" >Register!</button>
+            <button type="submit"  (click)="onSubmit()" >Register!</button>
         </form>
     </div>
 </div>
