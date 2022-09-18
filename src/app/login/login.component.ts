@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { UntypedFormBuilder } from '@angular/forms';
 import { UserService } from '../user.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { UserService } from '../user.service'
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private fb: UntypedFormBuilder, private us: UserService) { }
+  constructor(private fb: UntypedFormBuilder, private us: UserService, private router: Router) { }
   users: any = {};
 
   userForm: any = this.fb.group({
@@ -24,11 +25,19 @@ export class LoginComponent implements OnInit {
       next:
       data =>{
         this.users = data;
-        console.log(this.users)
-        for(let key in this.users){
-          
-          console.log(this.users[key].nickname.indexOf(nickname))
+        if(this.users.find((user: { nickname: string;}) => user.nickname === nickname)){
+          if(this.users.find((user: { password: string}) => user.password === password)){
+            console.log("succesful login")
+            console.log(this.users.find((user: { nickname: string;}) => user.nickname === nickname).id)
+            localStorage.setItem('your_id', this.users.find((user: { nickname: string;}) => user.nickname === nickname).id.toString());
+            this.router.navigate(['/'])
+          } else {
+            console.log('unsuccesful login')
+          }
+        } else {
+          console.log('unsuccesful login')
         }
+        
       }
     })
     
