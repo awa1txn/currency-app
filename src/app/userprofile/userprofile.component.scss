@@ -6,10 +6,14 @@
     height:320px;
   }
 .item{
-    background-color: aqua;
+
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.item-a>div>div:nth-child(odd){
+    max-width: 150px;
+    height: 20;
 }
 .item-a>div>div:nth-child(even) {
     display: flex;
@@ -17,4 +21,10 @@
 }
 .item-b{
     justify-content: space-evenly;  
+}
+
+.item-b>div>a>div:nth-child(odd){
+    position:relative;
+    right:10px;
+    bottom:10px
 }
