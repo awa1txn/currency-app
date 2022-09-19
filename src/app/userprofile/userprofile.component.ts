@@ -5,7 +5,7 @@ import { AppComponent } from '../app.component'
 @Component({
   selector: 'app-userprofile',
   templateUrl: './userprofile.component.html',
-  styleUrls: ['./userprofile.component.scss']
+  styleUrls: ['./userprofile.component.scss', "../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css" ]
 })
 export class UserprofileComponent implements OnInit {
 

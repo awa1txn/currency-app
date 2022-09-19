@@ -1,0 +1,17 @@
+.container {
+    display: grid;
+    grid-template-columns: 20vw 64vw ;
+    grid-template-rows: 300px 300px 300px;
+    grid-gap: 10px 1em;
+    height:320px;
+  }
+.item{
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item>div>div:nth-child(even) {
+    display: flex;
+    justify-content: center;
+}
