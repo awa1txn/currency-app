@@ -28,19 +28,17 @@ export class RegisterComponent implements OnInit {
     const { nickname, password } = this.userForm.value;
       Promise.resolve()
       .then(x => {
-        this.userService.postContent(nickname, password).subscribe({
+        this.userService.postContent(nickname, password, 'none', 0).subscribe({
           next: 
           data => {
-            this.userForm.patchValue(data);
+            this.userForm = data;
             localStorage.setItem('your_id', this.userForm.id);
-            console.log(data)
+            console.log(this.userForm)
+            this.router.navigate(['/'])
           }
         })
       })
-      .then(()=>{
-        setTimeout(()=>this.router.navigate(['/']), 3000)
-        
-      })
+
       
     
 }

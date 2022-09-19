@@ -19,10 +19,12 @@ export class UserService {
   constructor(private http: HttpClient, private ac: AppComponent) { }
   _$loggedIn: boolean = false;
 
-  postContent(nickname: string, password: string): Observable<object> {
+  postContent(nickname: string, password: string, avatar: string, balance: number): Observable<object> {
     return this.http.post<object>(API_URL + 'people', {
       nickname,
-      password
+      password,
+      avatar,
+      balance
     }, httpOptions)
 }
   getContent(): Observable<object> {

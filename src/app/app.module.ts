@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { UserService } from './user.service'
 import { RouterModule } from '@angular/router';
 import { ContentComponent } from './content/content.component';
 import { EntartaimentComponent } from './entartaiment/entartaiment.component';
@@ -22,7 +20,6 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     ContentComponent,
     EntartaimentComponent,
     AboutComponent,
