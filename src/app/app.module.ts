@@ -16,6 +16,9 @@ import { UnloggedHeaderComponent } from './unlogged-header/unlogged-header.compo
 import { NotificationComponent } from './notification/notification.component';
 import { MailboxComponent } from './mailbox/mailbox.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
+import { WalletComponent } from './userprofile/wallet/wallet.component';
+import { SettingsComponent } from './userprofile/settings/settings.component';
+import { OverviewComponent } from './userprofile/overview/overview.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
     UnloggedHeaderComponent,
     NotificationComponent,
     MailboxComponent,
-    UserprofileComponent
+    UserprofileComponent,
+    WalletComponent,
+    SettingsComponent,
+    OverviewComponent
   ],
   imports: [
     BrowserModule,

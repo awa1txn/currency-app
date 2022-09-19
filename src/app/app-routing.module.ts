@@ -9,6 +9,9 @@ import { LoginComponent } from './login/login.component';
 import { MailboxComponent } from './mailbox/mailbox.component'
 import { NotificationComponent } from './notification/notification.component'
 import { UserprofileComponent } from './userprofile/userprofile.component'
+import { SettingsComponent } from './userprofile/settings/settings.component';
+import { WalletComponent } from './userprofile/wallet/wallet.component';
+import { OverviewComponent } from './userprofile/overview/overview.component';
 
 const routes: Routes = [
   { path: '', component: ContentComponent, pathMatch: 'full', },
@@ -17,9 +20,12 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'mailbox', component: MailboxComponent},
-  { path: 'notification', component: NotificationComponent},
-  { path: 'userprofile', component: UserprofileComponent}
+  { path: 'mailbox', component: MailboxComponent },
+  { path: 'notification', component: NotificationComponent },
+  { path: 'userprofile', component: UserprofileComponent },
+  { path: 'wallet', component: WalletComponent },
+  { path: 'settings', component: SettingsComponent },
+  { path: 'overview', component: OverviewComponent }
 
 ];
 

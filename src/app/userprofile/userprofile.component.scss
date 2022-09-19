@@ -11,7 +11,10 @@
     justify-content: center;
     align-items: center;
 }
-.item>div>div:nth-child(even) {
+.item-a>div>div:nth-child(even) {
     display: flex;
     justify-content: center;
+}
+.item-b{
+    justify-content: space-evenly;  
 }
