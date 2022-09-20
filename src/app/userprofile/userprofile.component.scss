@@ -6,7 +6,7 @@
     height:320px;
   }
 .item{
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,4 +27,7 @@
     position:relative;
     right:10px;
     bottom:10px
+}
+.UPButtons{
+    cursor: pointer;
 }
