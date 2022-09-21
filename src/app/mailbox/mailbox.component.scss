@@ -1,0 +1,27 @@
+.container {
+    display: grid;
+    grid-template-columns: 20vw 64vw ;
+    grid-template-rows: 300px 300px 300px;
+    grid-gap: 10px 1em;
+    height:320px;
+  }
+.item:nth-child(odd){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.item:nth-child(even){
+    display: block;
+    padding: 10px;
+}
+.item>div:nth-child(-n+1){
+    border: 5px solid black;
+    padding: 10px;
+}
+.item>div:nth-child(n+2){
+    border: 2px solid black;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}

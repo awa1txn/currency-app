@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../user.service'
-import { AppComponent } from '../../app.component'
+import { UserService } from '../user.service'
+import { AppComponent } from '../app.component'
 
 @Component({
-  selector: 'app-overview',
-  templateUrl: './overview.component.html',
-  styleUrls: ['./overview.component.scss']
+  selector: 'app-sendmail',
+  templateUrl: './sendmail.component.html',
+  styleUrls: ['./sendmail.component.scss']
 })
-export class OverviewComponent implements OnInit {
+export class SendmailComponent implements OnInit {
 
   constructor(private us: UserService, private ac:AppComponent) { }
 
@@ -16,7 +16,6 @@ export class OverviewComponent implements OnInit {
     if(localStorage.getItem('loggedIn') == '1'){
     Promise.resolve().then(()=>{this.ac._$isLogged = true;})
   }
-
   }
 
 }

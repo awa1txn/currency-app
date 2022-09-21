@@ -12,6 +12,7 @@ import { UserprofileComponent } from './userprofile/userprofile.component'
 import { SettingsComponent } from './userprofile/settings/settings.component';
 import { WalletComponent } from './userprofile/wallet/wallet.component';
 import { OverviewComponent } from './userprofile/overview/overview.component';
+import { SendmailComponent } from './sendmail/sendmail.component';
 
 const routes: Routes = [
   { path: '', component: ContentComponent, pathMatch: 'full', },
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'userprofile', component: UserprofileComponent },
   { path: 'wallet', component: WalletComponent },
   { path: 'settings', component: SettingsComponent },
-  { path: 'overview', component: OverviewComponent }
+  { path: 'overview', component: OverviewComponent },
+  { path: 'sendmail', component: SendmailComponent },
 
 ];
 

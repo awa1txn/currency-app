@@ -19,6 +19,7 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
 import { WalletComponent } from './userprofile/wallet/wallet.component';
 import { SettingsComponent } from './userprofile/settings/settings.component';
 import { OverviewComponent } from './userprofile/overview/overview.component';
+import { SendmailComponent } from './sendmail/sendmail.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { OverviewComponent } from './userprofile/overview/overview.component';
     UserprofileComponent,
     WalletComponent,
     SettingsComponent,
-    OverviewComponent
+    OverviewComponent,
+    SendmailComponent
   ],
   imports: [
     BrowserModule,
