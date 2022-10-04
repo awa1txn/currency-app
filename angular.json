@@ -78,7 +78,9 @@
               "browserTarget": "currency-app:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "options": {
+            "browserTarget": "currency-app:build"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",

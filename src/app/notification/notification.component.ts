@@ -9,6 +9,8 @@ import { AppComponent } from '../app.component'
 })
 export class NotificationComponent implements OnInit {
 
+  friendName = '{{friendName}}'
+
   constructor(private us: UserService, private ac:AppComponent) { }
 
   ngOnInit(): void {
