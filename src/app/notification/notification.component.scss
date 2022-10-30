@@ -1,0 +1,12 @@
+mat-card{
+    display: flex;
+    margin: 5px 0px;
+}
+mat-card p:nth-child(odd){
+    border-right: solid 3px;
+    border-color: black;
+    padding: 0px 20px;
+}
+mat-card p {
+    margin: 5px 20px;
+}

@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl, Validators} from '@angular/forms';
 import { UserService } from '../user.service'
 import { AppComponent } from '../app.component'
+
+interface Purpose {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-contact',
@@ -8,6 +14,15 @@ import { AppComponent } from '../app.component'
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
+  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+
+
+
+  purposes: Purpose[] = [
+    {value: '0', viewValue: 'Product question(New customer)'},
+    {value: '1', viewValue: 'Feedback'},
+    {value: '2', viewValue: 'Advertising'},
+  ];
 
   constructor(private us: UserService, private ac:AppComponent) { }
 

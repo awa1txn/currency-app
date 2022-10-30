@@ -20,6 +20,15 @@ import { WalletComponent } from './userprofile/wallet/wallet.component';
 import { SettingsComponent } from './userprofile/settings/settings.component';
 import { OverviewComponent } from './userprofile/overview/overview.component';
 import { SendmailComponent } from './sendmail/sendmail.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTabsModule } from '@angular/material/tabs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button'; 
+import { MatCardModule } from '@angular/material/card'; 
 
 @NgModule({
   declarations: [
@@ -46,6 +55,15 @@ import { SendmailComponent } from './sendmail/sendmail.component';
     RouterModule.forRoot([]),
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
+    MatGridListModule,
+    MatTabsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [AppComponent],
   bootstrap: [AppComponent]
