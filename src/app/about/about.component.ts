@@ -8,6 +8,7 @@ import { AppComponent } from '../app.component'
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
+  panelOpenState = false;
 
   constructor(private us: UserService, private ac: AppComponent) { }
 
