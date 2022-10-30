@@ -30,6 +30,9 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button'; 
 import { MatCardModule } from '@angular/material/card'; 
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon'; 
+import { MatTableModule } from '@angular/material/table'  
+
 
 @NgModule({
   declarations: [
@@ -65,7 +68,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatSelectModule,
     MatButtonModule,
     MatCardModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatIconModule,
+    MatTableModule 
   ],
   providers: [AppComponent],
   bootstrap: [AppComponent]
