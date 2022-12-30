@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service'
 import { AppComponent } from '../app.component'
-import { Router} from '@angular/router';
+import { Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-userprofile',
@@ -9,8 +9,9 @@ import { Router} from '@angular/router';
   styleUrls: ['./userprofile.component.scss', "../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css" ]
 })
 export class UserprofileComponent implements OnInit {
-
-  constructor(private us: UserService, private ac:AppComponent, private router: Router) { }
+  data: any;
+  users: object | undefined;
+  constructor(private us: UserService, private ac:AppComponent, private router: Router, private route: ActivatedRoute) { }
 
   walletRedirect():void{
     this.router.navigate(['wallet'])
@@ -23,10 +24,17 @@ export class UserprofileComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {
+ ngOnInit(): void {
+    this.data = this.route.data
+    console.log(this.data)
     this.us.LoggedInNavBar()
     if(localStorage.getItem('loggedIn') == '1'){
     Promise.resolve().then(()=>{this.ac._$isLogged = true;})
   }
+    // this.us.getUser(this.userId).subscribe({next: data =>{
+    //   this.users = data;
+    //   Promise.resolve().then(()=>{console.log(this.users)})
+    // }})
+    
   }
 }

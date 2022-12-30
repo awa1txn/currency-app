@@ -12,10 +12,15 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
   
+  //[a-zA-Z]+[0-9] !@#\$%&\^\*
+
+  unSamePassword: boolean | undefined = false;
 
   userForm: any = this.fb.group({
-    nickname: ['', Validators.required],
-    password: ['']
+    nickname: ['', [Validators.required, Validators.pattern('[a-zA-Z]'), Validators.minLength(4), Validators.maxLength(12)]],
+    password: ['', [Validators.required, Validators.pattern('[a-zA-Z]+[0-9]')]],
+    email: ['', [Validators.required, Validators.email]],
+    repeatPassword: ['', Validators.required]
   });
 
   constructor(private fb: UntypedFormBuilder, private userService: UserService, private router: Router) {}
@@ -25,10 +30,11 @@ export class RegisterComponent implements OnInit {
 
   async onSubmit(): Promise<void> {
 
-    const { nickname, password } = this.userForm.value;
+    const { nickname, password, email, repeatPassword } = this.userForm.value;
+    if (repeatPassword === password){
       Promise.resolve()
       .then(x => {
-        this.userService.postContent(nickname, password, 'none', 0).subscribe({
+        this.userService.createUser(nickname, password, email, 'none', 0).subscribe({
           next: 
           data => {
             this.userForm = data;
@@ -38,6 +44,9 @@ export class RegisterComponent implements OnInit {
           }
         })
       })
+    } else {
+      this.unSamePassword = true;
+    }
 
       
     

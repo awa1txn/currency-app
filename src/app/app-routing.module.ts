@@ -13,6 +13,8 @@ import { SettingsComponent } from './userprofile/settings/settings.component';
 import { WalletComponent } from './userprofile/wallet/wallet.component';
 import { OverviewComponent } from './userprofile/overview/overview.component';
 import { SendmailComponent } from './sendmail/sendmail.component';
+import { UserResolver } from './user.resolver';
+
 
 const routes: Routes = [
   { path: '', component: ContentComponent, pathMatch: 'full', },
@@ -23,7 +25,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'mailbox', component: MailboxComponent },
   { path: 'notification', component: NotificationComponent },
-  { path: 'userprofile', component: UserprofileComponent },
+  { path: 'userprofile', component: UserprofileComponent, resolve: { user: UserResolver } },
   { path: 'wallet', component: WalletComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'overview', component: OverviewComponent },
@@ -33,6 +35,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [UserResolver]
 })
 export class AppRoutingModule { }

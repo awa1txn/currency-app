@@ -2,7 +2,7 @@
     <div class="item item-a">
         <div>
             <div><i class="fa-brands fa-accessible-icon fa-8x"></i></div>
-            <div>My name</div>
+            <div>{{data._value.user.nickname}}</div>
             <div>'My favorite phrase'</div>
         </div>
     </div>
@@ -15,9 +15,9 @@
                 <div><i class="fa-solid fa-screwdriver-wrench fa-4x"></i></div>
                 <div>Settings</div>
             </a></div>
-            <div class="UPButtons" (click)="overviewRedirect()"><a>
+            <div *ngIf="" class="UPButtons" (click)="overviewRedirect()"><a>
                 <div><i class="fa-solid fa-mountain-sun fa-4x"></i></div>
-                <div>Mistery</div>
+                <div>Admin panel</div>
             </a></div>
     </div>
 </div>
