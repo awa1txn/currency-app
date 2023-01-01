@@ -17,34 +17,53 @@
                 <label for="repeatPassword">Repeat password</label>    
                 <input id="repeatPassword" type="password" formControlName="repeatPassword">
             </div>
-            <div *ngIf="userForm.controls['email'].invalid && (userForm.controls['email'].dirty || userForm.controls['email'].touched)" class="alert alert-danger">
-                <div *ngIf="userForm.controls['email'].errors.required">
-                Email is required.
-                </div>
-                <div *ngIf="userForm.controls['email'].errors.email">
-                You need to use real email.
-                </div>
-                
-        </div>
-            <div *ngIf="userForm.controls['nickname'].invalid && (userForm.controls['nickname'].dirty || userForm.controls['nickname'].touched)" class="alert alert-danger">
-                    <div *ngIf="userForm.controls['nickname'].errors.required">
-                    Nickname is required.
-                    </div>
-                    <div *ngIf="userForm.controls['nickname'].errors.minlength">
-                    Name must be at least 4 characters long.
-                    </div>
-                    <div *ngIf="userForm.controls['nickname'].errors.maxlength">
-                    Name mustn't be more than 12 characters long.
-                    </div>
-                    <div *ngIf="userForm.controls['nickname'].errors.pattern">
-                    You cant use any symbols in your Nickname.
-                    </div>
+            
+        <div *ngIf="userForm.controls['email'].invalid && (userForm.controls['email'].dirty || userForm.controls['email'].touched)" class="alert alert-danger">
+            <div *ngIf="userForm.controls['email'].errors.required">
+            Email is required.
             </div>
+            <div *ngIf="userForm.controls['email'].errors.email">
+            You need to use real email.
+            </div>
+            <div *ngIf="userForm.controls['email'].errors.emailExistsValidator">
+            This Email already exists.
+            </div>
+        </div>
+
+        <div *ngIf="userForm.controls['nickname'].invalid && (userForm.controls['nickname'].dirty || userForm.controls['nickname'].touched)" class="alert alert-danger">
+            <div *ngIf="userForm.controls['nickname'].errors.required">
+            Nickname is required.
+            </div>
+            <div *ngIf="userForm.controls['nickname'].errors.minlength">
+            Name must be at least 4 characters long.
+            </div>
+            <div *ngIf="userForm.controls['nickname'].errors.maxlength">
+            Name mustn't be more than 12 characters long.
+            </div>
+            <div *ngIf="userForm.controls['nickname'].errors.pattern">
+            You can use only letters and numbers to create profile.  
+            </div>
+            <div *ngIf="userForm.controls['nickname'].errors.userExistsValidator">
+            This Nickname already exists.
+            </div>
+        </div>
             
-            
+        <div *ngIf="userForm.controls['password'].invalid && (userForm.controls['password'].dirty || userForm.controls['password'].touched)" class="alert alert-danger">
+            <div *ngIf="userForm.controls['password'].errors.required">
+            Password is required.
+            </div>
+            <div *ngIf="userForm.controls['password'].errors.pattern">
+            You need minimum eight characters, at least one uppercase letter, one lowercase letter and one number
+            </div>
+        </div>
+        <div  *ngIf="userForm.controls['repeatPassword'].invalid && (userForm.controls['repeatPassword'].dirty || userForm.controls['repeatPassword'].touched)" class="alert alert-danger">
+            <div *ngIf="userForm.controls['repeatPassword'].errors.confirmPasswordValidator">
+            Your password does not match.
+            </div>
+        </div>
 
             <p>already <a routerLink="/login"><span>registered?</span></a></p>
-            <button type="submit"  (click)="onSubmit()" >Register!</button>
+            <button type="submit"  (click)="onSubmit()" [disabled]="!userForm.valid">Register!</button>
         </form>
     </div>
 </div>

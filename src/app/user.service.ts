@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable} from 'rxjs';
-import { AppComponent } from './app.component'
 import { ContentComponent } from './content/content.component'
 import { catchError, retry } from 'rxjs/operators';
 
@@ -16,13 +15,41 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class UserService {
-  constructor(private http: HttpClient, private ac: AppComponent) { }
-  _$loggedIn: boolean = false;
 
+  users:any = {};
+  userList:any = []
+  emailList:any = []
+
+  constructor(private http: HttpClient) { }
+  _$loggedIn: boolean = false;
+  
+  findUserByEmail(): Promise<Observable<object>> {
+    this.getContent().subscribe({next: data=>{
+        this.users = data;
+        // console.log(this.users)
+        var iterator = this.users.values()
+        for(const values of iterator){
+          this.emailList.push(values.email.toLowerCase());
+        }
+      }});
+      return this.emailList;
+    }
+ findUserByName(): Promise<Observable<object>> {
+  this.getContent().subscribe({next: data=>{
+      this.users = data;
+      // console.log(this.users)
+      var iterator = this.users.values()
+      for(const values of iterator){
+        this.userList.push(values.nickname.toLowerCase());
+      }
+    }});
+    return this.userList;
+  }
   createUser(nickname: string, password: string, email: string, avatar: string, balance: number): Observable<object> {
     return this.http.post<object>(API_URL + 'people', {
       nickname,
       password,
+      email,
       avatar,
       balance
     }, httpOptions)
