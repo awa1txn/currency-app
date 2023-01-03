@@ -1,9 +1,13 @@
+//Living base modules
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//angular cli components
+import { AppComponent } from './app.component';
 import { ContentComponent } from './content/content.component';
 import { EntartaimentComponent } from './entartaiment/entartaiment.component';
 import { AboutComponent } from './about/about.component';
@@ -20,9 +24,10 @@ import { WalletComponent } from './userprofile/wallet/wallet.component';
 import { SettingsComponent } from './userprofile/settings/settings.component';
 import { OverviewComponent } from './userprofile/overview/overview.component';
 import { SendmailComponent } from './sendmail/sendmail.component';
+
+//angular material modules
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTabsModule } from '@angular/material/tabs';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -32,7 +37,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon'; 
 import { MatTableModule } from '@angular/material/table';
+import { MatProgressBarModule } from '@angular/material/progress-bar'; 
+import { MatListModule } from '@angular/material/list';
+
+//services
 import { UserService } from './user.service';
+
 
 
 @NgModule({
@@ -56,6 +66,7 @@ import { UserService } from './user.service';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     RouterModule.forRoot([]),
     ReactiveFormsModule,
@@ -63,7 +74,6 @@ import { UserService } from './user.service';
     FormsModule,
     MatGridListModule,
     MatTabsModule,
-    BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
@@ -71,7 +81,9 @@ import { UserService } from './user.service';
     MatCardModule,
     MatExpansionModule,
     MatIconModule,
-    MatTableModule 
+    MatTableModule,
+    MatProgressBarModule,
+    MatListModule
   ],
   providers: [AppComponent, UserService],
   bootstrap: [AppComponent]

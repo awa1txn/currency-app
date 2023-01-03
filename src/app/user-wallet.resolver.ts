@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { Observable} from 'rxjs';
 import { UserService } from './user.service';
-@Injectable()
-export class UserResolver implements Resolve<any> {
+@Injectable({
+    providedIn: "root"  // **** ADD THIS LINE ****
+  })
+export class UserWalletResolver implements Resolve<any> {
   constructor(private user: UserService) {}
 
   resolve(    route: ActivatedRouteSnapshot,

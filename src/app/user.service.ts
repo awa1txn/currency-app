@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable} from 'rxjs';
-import { ContentComponent } from './content/content.component'
-import { catchError, retry } from 'rxjs/operators';
 
 
 const API_URL = 'http://localhost:3000/';
@@ -44,22 +42,23 @@ export class UserService {
       }
     }});
     return this.userList;
-  }
-  createUser(nickname: string, password: string, email: string, avatar: string, balance: number): Observable<object> {
+}
+
+  createUser(nickname: string, password: string, email: string, avatar: string, wallet: object[]): Observable<object> {
     return this.http.post<object>(API_URL + 'people', {
       nickname,
       password,
       email,
       avatar,
-      balance
+      wallet
     }, httpOptions)
 }
   getContent(): Observable<object> {
     return this.http.get<object>(API_URL + `people/`)
-  }
+}
   getUser(userId:any): Observable<object> {
     return this.http.get<object>(API_URL + `people/${userId}`)
-  }
+}
 
   LoggedInNavBar(): void {
 

@@ -1,6 +1,9 @@
 <app-logged-header *ngIf="_$isLogged"></app-logged-header>
 <app-unlogged-header *ngIf="!_$isLogged"></app-unlogged-header>
 <!-- <p>{{ | async}}</p> -->
+<mat-progress-bar
+*ngIf="loading" color="accent" mode="indeterminate">
+</mat-progress-bar>
 <div class="app-content">
     <div class="inner-app-content">
     <router-outlet></router-outlet>

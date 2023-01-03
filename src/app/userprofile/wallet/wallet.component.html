@@ -1,1 +1,11 @@
-<p>wallet works!</p>
+<mat-list>
+    <div mat-subheader>Your wallet</div>
+    <!-- <div>{{this.data._value.user.wallet}}</div> -->
+    <mat-list-item *ngFor="let money of this.data._value.user.wallet">
+      <span style="color: #f2a900"><i class="fa-brands fa-bitcoin"></i></span>
+      <div matListItemTitle>{{money.moneyType.toUpperCase()}}: </div>
+      <div matListItemLine>{{money.amount}}</div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+  

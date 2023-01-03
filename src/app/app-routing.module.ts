@@ -14,6 +14,7 @@ import { WalletComponent } from './userprofile/wallet/wallet.component';
 import { OverviewComponent } from './userprofile/overview/overview.component';
 import { SendmailComponent } from './sendmail/sendmail.component';
 import { UserResolver } from './user.resolver';
+import { UserWalletResolver } from './user-wallet.resolver';
 
 
 const routes: Routes = [
@@ -26,7 +27,7 @@ const routes: Routes = [
   { path: 'mailbox', component: MailboxComponent },
   { path: 'notification', component: NotificationComponent },
   { path: 'userprofile', component: UserprofileComponent, resolve: { user: UserResolver } },
-  { path: 'wallet', component: WalletComponent },
+  { path: 'wallet', component: WalletComponent, resolve: { user: UserWalletResolver } },
   { path: 'settings', component: SettingsComponent },
   { path: 'overview', component: OverviewComponent },
   { path: 'sendmail', component: SendmailComponent },
