@@ -39,6 +39,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressBarModule } from '@angular/material/progress-bar'; 
 import { MatListModule } from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar'; 
 
 //services
 import { UserService } from './user.service';
@@ -83,7 +84,8 @@ import { UserService } from './user.service';
     MatIconModule,
     MatTableModule,
     MatProgressBarModule,
-    MatListModule
+    MatListModule,
+    MatToolbarModule
   ],
   providers: [AppComponent, UserService],
   bootstrap: [AppComponent]

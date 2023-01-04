@@ -5,11 +5,13 @@ import { AppComponent } from '../../app.component'
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
-  styleUrls: ['./settings.component.scss']
+  styleUrls: ['./settings.component.scss', "../../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css" ]
 })
 export class SettingsComponent implements OnInit {
 
   constructor(private us: UserService, private ac:AppComponent) { }
+
+  
 
   ngOnInit(): void {
     this.us.LoggedInNavBar()
@@ -17,5 +19,4 @@ export class SettingsComponent implements OnInit {
     Promise.resolve().then(()=>{this.ac._$isLogged = true;})
   }
   }
-
 }
