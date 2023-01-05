@@ -1,3 +1,22 @@
 .mat-mdc-list-item-icon {
     color: rgba(0, 0, 0, 0.54);
   }
+  .bitcoinStyle{
+    color:#f2a900
+  };
+  .euroStyle{
+    color:#5D7EA7
+  };
+  .dollarStyle{
+    color:#85bb65
+  };
+  ::ng-deep .mat-list-base .mat-list-item .mat-list-item-content, .mat-list-base .mat-list-option .mat-list-item-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 16px;
+    position: relative;
+    height: inherit;
+    justify-content: space-between;
+  }

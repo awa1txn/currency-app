@@ -1,17 +1,19 @@
 <mat-accordion class="example-headers-align">
+  <form action="/upload" method="POST" enctype="multipart/form-data">
     <mat-expansion-panel hideToggle>
       <mat-expansion-panel-header>
         <mat-panel-title>
           Change avatar
         </mat-panel-title>
       </mat-expansion-panel-header>
-  
-      <input type="file">
+      
+      <input type="file" name="image" (change)="onFileChanged($event)">
 
       <mat-action-row>
-        <button mat-button color="primary">Apply</button>
+        <button mat-button color="primary" (click)="onUpload()">Apply</button>
       </mat-action-row>
     </mat-expansion-panel>
+  </form>
     <mat-expansion-panel hideToggle>
         <mat-expansion-panel-header>
           <mat-panel-title>

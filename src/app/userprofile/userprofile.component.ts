@@ -28,7 +28,6 @@ export class UserprofileComponent implements OnInit {
  ngOnInit(): void {
     this.createChart()
     this.data = this.route.data
-    console.log(this.data)
     this.us.LoggedInNavBar()
     if(localStorage.getItem('loggedIn') == '1'){
     Promise.resolve().then(()=>{this.ac._$isLogged = true;})

@@ -19,26 +19,8 @@ export class WalletComponent implements OnInit {
 
   constructor(private us: UserService, private ac:AppComponent, private route: ActivatedRoute) { }
 
-  folders: Section[] = [
-    {
-      name: 'Photos',
-      updated: new Date('1/1/16'),
-    },
-    {
-      name: 'Recipes',
-      updated: new Date('1/17/16'),
-    },
-    {
-      name: 'Work',
-      updated: new Date('1/28/16'),
-    },
-  ];
-
-  
-
   ngOnInit(): void {
     this.data = this.route.data
-    console.log(this.data)
     this.us.LoggedInNavBar()
     if(localStorage.getItem('loggedIn') == '1'){
     Promise.resolve().then(()=>{this.ac._$isLogged = true;})

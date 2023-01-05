@@ -4,22 +4,22 @@ import { AppComponent } from '../app.component'
 import { Router} from '@angular/router';
 
 export interface PeriodicElement {
-  name: string;
-  weight: string;
+  username: string;
+  description: string;
   date: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  { name: 'Hydrogen', weight: "Lorem Ipsum is simply dummy", date: '10/30/2022'},
-  { name: 'Helium', weight: "Lorem Ipsum is simply dummy", date: '10/30/2022'},
-  { name: 'Lithium', weight: "Lorem Ipsum is simply dummyLorem Ipsum is simply dummy", date: '10/30/2022'},
-  { name: 'Beryllium', weight: "Lorem Ipsum is simply dummy", date: '10/30/2022'},
-  { name: 'Boron', weight: "Lorem Ipsum is simply dummyLorem Ipsum is ", date: '10/30/2022'},
-  { name: 'Carbon', weight: "Lorem Ipsum is simply dummy", date: '10/30/2022'},
-  { name: 'Nitrogen', weight: "Lorem Ipsum is simply dummy", date: '10/30/2022'},
-  { name: 'Oxygen', weight: "Lorem Ipsum is simply dummy", date: '10/30/2022'},
-  { name: 'Fluorine', weight: "Lorem Ipsum is simply dummyLorem Ipsum is simply dummy", date: '10/30/2022'},
-  { name: 'Neon', weight: "Lorem Ipsum is simply dummy", date: '10/30/2022'},
+  { username: 'Hydrogen', description: "Lorem Ipsum is simply dummy", date: '10/30/2022'},
+  { username: 'Helium', description: "Lorem Ipsum is simply dummy", date: '10/30/2022'},
+  { username: 'Lithium', description: "Lorem Ipsum is simply dummyLorem Ipsum is simply dummy", date: '10/30/2022'},
+  { username: 'Beryllium', description: "Lorem Ipsum is simply dummy", date: '10/30/2022'},
+  { username: 'Boron', description: "Lorem Ipsum is simply dummyLorem Ipsum is ", date: '10/30/2022'},
+  { username: 'Carbon', description: "Lorem Ipsum is simply dummy", date: '10/30/2022'},
+  { username: 'Nitrogen', description: "Lorem Ipsum is simply dummy", date: '10/30/2022'},
+  { username: 'Oxygen', description: "Lorem Ipsum is simply dummy", date: '10/30/2022'},
+  { username: 'Fluorine', description: "Lorem Ipsum is simply dummyLorem Ipsum is simply dummy", date: '10/30/2022'},
+  { username: 'Neon', description: "Lorem Ipsum is simply dummy", date: '10/30/2022'},
 ];
 
 

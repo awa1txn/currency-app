@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve && node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -28,8 +28,12 @@
     "chart.js": "^3.9.1",
     "chartjs-adapter-luxon": "^1.2.0",
     "chartjs-plugin-streaming": "^2.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
     "json-server": "^0.17.0",
     "luxon": "^3.0.4",
+    "multer": "^1.4.5-lts.1",
     "ng2-charts": "^4.0.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
