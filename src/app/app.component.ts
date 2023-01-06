@@ -7,7 +7,6 @@ import {
   NavigationStart,
   Router
 } from '@angular/router';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-root',
