@@ -15,4 +15,6 @@ First terminal:<code> $ ng serve </code><br>
 Second terminal:<code> $ node server.js </code><br>
 Third terminal:<code> $ json-server db.json</code>(WHERE db.json is file created for json-server package)<br>
 
-Yes, once upon time docker will become part of my project. But not sure exactly when :)
+Yes, once upon time docker will become part of my project. But not sure exactly when :)<br>
+
+Spoiler: IT WILL!
