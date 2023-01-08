@@ -20,6 +20,10 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
   _$loggedIn: boolean = false;
+
+  putNewFavPhraseToUser(id:string, favPhrase:string): Observable<object> {
+    return this.http.put(API_URL+'people/'+id, {favPhrase}, httpOptions)
+  }
   
   findUserByEmail(): Promise<Observable<object>> {
     this.getContent().subscribe({next: data=>{

@@ -20,14 +20,14 @@
             Set new favorite phrase
           </mat-panel-title>
         </mat-expansion-panel-header>
-    
+        <form [formGroup]="userPhrase">
         <mat-form-field appearance="fill">
           <mat-label>If life..</mat-label>
-          <input matInput>
+          <input matInput formControlName="favPhrase">
         </mat-form-field>
-    
+        </form>
         <mat-action-row>
-          <button mat-button color="primary">Apply</button>
+          <button mat-button color="primary" (click)="changeFavPhrase()">Apply</button>
         </mat-action-row>
       </mat-expansion-panel>
 
