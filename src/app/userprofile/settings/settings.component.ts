@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../user.service'
 import { AppComponent } from '../../app.component'
-import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
+import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Validators } from '@angular/forms';
 import { UntypedFormBuilder } from '@angular/forms';
 
@@ -40,7 +40,7 @@ export class SettingsComponent implements OnInit {
   changeFavPhrase():void {
     const { favPhrase} = this.userPhrase.value;
     
-    this.us.putNewFavPhraseToUser(JSON.parse(localStorage.getItem('your_id') || '{}'), favPhrase).subscribe(res=>{console.log(res)})
+    this.us.patchNewFavPhraseToUser(JSON.parse(localStorage.getItem('your_id') || '{}'), favPhrase).subscribe(res=>{console.log(res)})
   }
 
 
