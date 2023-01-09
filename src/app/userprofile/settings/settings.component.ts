@@ -4,6 +4,7 @@ import { AppComponent } from '../../app.component'
 import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Validators } from '@angular/forms';
 import { UntypedFormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-settings',
@@ -12,12 +13,22 @@ import { UntypedFormBuilder } from '@angular/forms';
 })
 export class SettingsComponent implements OnInit {
 
-  constructor(private us: UserService, private ac:AppComponent, private http:HttpClient, private fb: UntypedFormBuilder) { }
+  constructor(private us: UserService, private ac:AppComponent, private http:HttpClient, private fb: UntypedFormBuilder, private router: Router) { }
 
   selectedFile!: File;
 
   userPhrase: any = this.fb.group({
     favPhrase: ['']
+  })
+  changePassword: any = this.fb.group({
+    currentPassword: [''],
+    newPassword: ['']
+  })
+  changeNickname: any = this.fb.group({
+    newNickname: ['']
+  })
+  changeEmail: any = this.fb.group({
+    newEmail: ['']
   })
   
   onFileChanged(event:any) {
@@ -28,7 +39,7 @@ export class SettingsComponent implements OnInit {
   
   onUpload() {
     const uploadData = new FormData();
-    uploadData.append('file', this.selectedFile, this.selectedFile.name);
+    uploadData.append('file', this.selectedFile, `${JSON.parse(localStorage.getItem('your_id') || '{}')}.png`);
     const req = new HttpRequest('POST', `http://localhost:8080/upload`, uploadData, {
       reportProgress: true,
       responseType: 'json'
@@ -37,11 +48,34 @@ export class SettingsComponent implements OnInit {
     this.http.request(req).subscribe(res=>{})//console.log(res)
   }
 
-  changeFavPhrase():void {
-    const { favPhrase} = this.userPhrase.value;
-    
-    this.us.patchNewFavPhraseToUser(JSON.parse(localStorage.getItem('your_id') || '{}'), favPhrase).subscribe(res=>{console.log(res)})
+changeFavPhrase():void {
+    let { favPhrase} = this.userPhrase.value;
+    this.us.patchNewFavPhraseToUser(JSON.parse(localStorage.getItem('your_id') || '{}'), favPhrase).subscribe(res=>{console.log(res);this.router.navigate(['userprofile'])});
   }
+ChangePassword():void{
+
+  let { currentPassword, newPassword} = this.changePassword.value;
+  let cPass:any = {};
+  this.us.getYourPassword(JSON.parse(localStorage.getItem('your_id') || '{}')).subscribe(res=>{
+    cPass=res;
+    console.log(cPass.password)
+    if( cPass.password == currentPassword ){
+      this.us.patchNewPassword(JSON.parse(localStorage.getItem('your_id') || '{}'), newPassword).subscribe(res=>{console.log(res);this.router.navigate(['userprofile'])})
+    } else {
+      console.warn("Your current pass isn't right")
+    }
+  });
+}
+
+ChangeNickname():void{
+  let { newNickname} = this.changeNickname.value;
+  this.us.patchNewNickname(JSON.parse(localStorage.getItem('your_id') || '{}'), newNickname).subscribe(res=>{console.log(res);this.router.navigate(['userprofile'])})
+}
+
+ChangeEmail():void{
+  let { newEmail} = this.changeEmail.value;
+  this.us.patchNewEmail(JSON.parse(localStorage.getItem('your_id') || '{}'), newEmail).subscribe(res=>{console.log(res);this.router.navigate(['userprofile'])})
+}
 
 
 

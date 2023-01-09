@@ -14,7 +14,6 @@ export class LoggedHeaderComponent implements OnInit {
   }
   logout():void {
     localStorage.clear();
-    this.router.navigate(['/'])
     setTimeout(() => {
       window.location.reload()
     }, 500);
