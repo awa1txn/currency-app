@@ -5,10 +5,10 @@
       <div matListItemLine>Money amount</div>
     </mat-list-item>
     <mat-list-item *ngFor="let money of this.data._value.user.wallet">
-        <span [ngClass]="money.moneyType === 'bitcoin' ? 'bitcoinStyle' :(money.moneyType === 'euro' ? 'euroStyle' : 'dollarStyle')">
-        <i [ngClass]="money.moneyType === 'bitcoin' ? 'fa-brands fa-bitcoin' :(money.moneyType === 'euro' ? 'fa-solid fa-euro-sign' : 'fa-solid fa-dollar-sign')" class="fa-2x"></i>
+        <span [ngClass]="money.moneytype === 'bitcoin' ? 'bitcoinStyle' :(money.moneytype === 'euro' ? 'euroStyle' : 'dollarStyle')">
+        <i [ngClass]="money.moneytype === 'bitcoin' ? 'fa-brands fa-bitcoin' :(money.moneytype === 'euro' ? 'fa-solid fa-euro-sign' : 'fa-solid fa-dollar-sign')" class="fa-2x"></i>
       </span>
-      <div matListItemTitle>{{money.moneyType.toUpperCase()}}</div>
+      <div matListItemTitle>{{money.moneytype.toUpperCase()}}</div>
       <div matListItemLine>{{money.amount}}</div>
     </mat-list-item>
     <mat-divider></mat-divider>

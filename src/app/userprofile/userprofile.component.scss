@@ -19,6 +19,9 @@
     display: flex;
     justify-content: center;
 }
+::ng-deep .userpp{
+    border-radius: 100%;
+}
 .item-b{
     justify-content: space-evenly;  
 }

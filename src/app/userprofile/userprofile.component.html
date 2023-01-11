@@ -3,7 +3,7 @@
         <div>
             <div>
             <!-- <i class="fa-brands fa-accessible-icon fa-8x"></i> -->
-            <img class="userpp" src="http://localhost:8080/files/{{data._value.user.nickname}}.png">
+            <img class="userpp" src="http://localhost:8080/files/{{data._value.user.avatar === 'user' ? 'user' : data._value.user.nickname }}.png">
             </div>
             <div>{{data._value.user.nickname}}</div>
             <div>"<i>{{data._value.user.favPhrase}}</i>"</div>

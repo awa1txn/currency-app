@@ -1,19 +1,25 @@
+<form [formGroup]="topup">
 <div style="width: 100%; height: 500px; display: flex; justify-content: center; align-items: center;">
 <div>
     <div style="width: 100%;  height: 40px; display: flex; justify-content: center; align-items: center;">
-        <h3>TOP UP MENU</h3>
+        <h3>TOP UP</h3>
     </div>
     <mat-form-field appearance="fill" style="display: block;">
         <mat-label>Your moneytype</mat-label>
-        <input matInput>
+        <input matInput formControlName="moneytype">
     </mat-form-field>
     <mat-form-field appearance="fill" style="display: block;">
-        <mat-label>Amount to topup</mat-label>
-        <input type="number" matInput>
+        <mat-label>Amount to top-up</mat-label>
+        <input type="number" matInput formControlName="amount">
     </mat-form-field>
-    <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-        <button mat-button color="primary">Submit</button>
+    <div  *ngIf="topup.controls['moneytype'].invalid && (topup.controls['moneytype'].dirty || topup.controls['moneytype'].touched)" class="alert alert-danger" style="width: 200px; ">
+        <div *ngIf="topup.controls['moneytype'].errors.topupValidator">
+            Unfortunately it's not accepted moneytype in our service. You can use only 'euro', 'dollar' or 'bitcoin'.
+        </div>
     </div>
-    
+    <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+        <button mat-button color="primary" [disabled]="!topup.valid" (click)="moneytopup()">Submit</button>
+    </div>
 </div>
 </div>
+</form>

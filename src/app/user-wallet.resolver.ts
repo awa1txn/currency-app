@@ -3,7 +3,7 @@ import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/r
 import { Observable} from 'rxjs';
 import { UserService } from './user.service';
 @Injectable({
-    providedIn: "root"  // **** ADD THIS LINE ****
+    providedIn: "root"
   })
 export class UserWalletResolver implements Resolve<any> {
   constructor(private user: UserService) {}

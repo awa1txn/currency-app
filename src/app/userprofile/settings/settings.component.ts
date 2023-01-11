@@ -16,6 +16,7 @@ export class SettingsComponent implements OnInit {
   constructor(private us: UserService, private ac:AppComponent, private http:HttpClient, private fb: UntypedFormBuilder, private router: Router) { }
 
   selectedFile!: File;
+  accessorFile:boolean | undefined;
 
   userPhrase: any = this.fb.group({
     favPhrase: ['']
@@ -34,18 +35,20 @@ export class SettingsComponent implements OnInit {
   onFileChanged(event:any) {
     const file = event.target.files[0];
     this.selectedFile = file;
-    // console.log(this.selectedFile)
+    console.log(this.selectedFile)
   }
   
   onUpload() {
     const uploadData = new FormData();
-    uploadData.append('file', this.selectedFile, `${JSON.parse(localStorage.getItem('your_id') || '{}')}.png`);
+
+    uploadData.append('file', this.selectedFile, `${localStorage.getItem('your_nickname')}.png`);
     const req = new HttpRequest('POST', `http://localhost:8080/upload`, uploadData, {
       reportProgress: true,
       responseType: 'json'
     })
     // console.log(uploadData)
     this.http.request(req).subscribe(res=>{})//console.log(res)
+    this.us.patchUserAvatar(JSON.parse(localStorage.getItem('your_id') || '{}'), JSON.stringify(localStorage.getItem('your_nickname') || '{}').slice(1,-1)).subscribe(res=>{console.log(res)})
   }
 
 changeFavPhrase():void {

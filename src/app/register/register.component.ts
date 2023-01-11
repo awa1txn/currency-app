@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
 
       Promise.resolve()
       .then(x => {
-        this.userService.createUser(nickname, password, email, 'none', [{"moneyType":'dollar', "amount": 0}]).subscribe({
+        this.userService.createUser(nickname, password, email, 'user', [{"moneytype":'dollar', "amount": 0}]).subscribe({
           next: 
           data => {
             this.userForm = data;

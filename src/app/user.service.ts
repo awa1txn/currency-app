@@ -20,6 +20,15 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
   _$loggedIn: boolean = false;
+  patchUserAvatar(id:string, avatar:string): Observable<object>{
+    return this.http.patch(API_URL+'people/'+id, {avatar}, httpOptions)
+  }
+  getUserWallet(id:string): Observable<object>{
+    return this.http.patch(API_URL+'people/'+id, httpOptions)
+  }
+  patchUserWallet(id:string, wallet:object): Observable<object>{
+    return this.http.patch(API_URL+'people/'+id, {wallet}, httpOptions)
+  }
 
   patchNewEmail(id:string, email:string): Observable<object>{
     return this.http.patch(API_URL+'people/'+id, {email}, httpOptions)

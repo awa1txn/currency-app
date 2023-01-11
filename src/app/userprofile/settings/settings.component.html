@@ -7,8 +7,8 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
       
-      <input type="file" name="image" (change)="onFileChanged($event)">
-
+      <input type="file" name="image" accept="image/*" (change)="onFileChanged($event)">
+      <div *ngIf="this.accessorFile">LOL</div>
       <mat-action-row>
         <button mat-button color="primary" (click)="onUpload()">Apply</button>
       </mat-action-row>

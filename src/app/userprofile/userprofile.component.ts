@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service'
 import { AppComponent } from '../app.component'
 import { Router, ActivatedRoute} from '@angular/router';
-import {Chart, ChartConfiguration, ChartItem, registerables} from 'node_modules/chart.js';
+import { Chart, ChartConfiguration, ChartItem, registerables} from 'node_modules/chart.js';
 
 @Component({
   selector: 'app-userprofile',
@@ -13,7 +13,7 @@ export class UserprofileComponent implements OnInit {
 
   data: any;
   users: object | undefined;
-  constructor(private us: UserService, private ac:AppComponent, private router: Router, private route: ActivatedRoute) { }
+  constructor(private us: UserService, private ac:AppComponent, private router: Router, private route: ActivatedRoute) {}
 
   walletRedirect():void{
     this.router.navigate(['wallet'])
