@@ -4,10 +4,10 @@ import { AppComponent } from '../../app.component'
 
 @Component({
   selector: 'app-overview',
-  templateUrl: './overview.component.html',
-  styleUrls: ['./overview.component.scss']
+  templateUrl: './topup.component.html',
+  styleUrls: ['./topup.component.scss']
 })
-export class OverviewComponent implements OnInit {
+export class TopupComponent implements OnInit {
 
   constructor(private us: UserService, private ac:AppComponent) { }
 

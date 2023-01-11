@@ -21,7 +21,7 @@ export class UserprofileComponent implements OnInit {
     this.router.navigate(['settings'])
   }
   overviewRedirect():void{
-    this.router.navigate(['overview'])
+    this.router.navigate(['topup'])
   }
 
 

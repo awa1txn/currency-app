@@ -57,6 +57,9 @@ export class UserService {
       wallet
     }, httpOptions)
 }
+   ContactToOwner(message:object): Observable<object> {
+  return this.http.post<object>(API_URL + 'contactToOwner', message, httpOptions)
+}
   getContent(): Observable<object> {
     return this.http.get<object>(API_URL + `people/`)
 }

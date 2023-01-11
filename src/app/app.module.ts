@@ -22,7 +22,7 @@ import { MailboxComponent } from './mailbox/mailbox.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { WalletComponent } from './userprofile/wallet/wallet.component';
 import { SettingsComponent } from './userprofile/settings/settings.component';
-import { OverviewComponent } from './userprofile/overview/overview.component';
+import { TopupComponent } from './userprofile/topup/topup.component';
 import { SendmailComponent } from './sendmail/sendmail.component';
 
 //angular material modules
@@ -62,7 +62,7 @@ import { UserService } from './user.service';
     UserprofileComponent,
     WalletComponent,
     SettingsComponent,
-    OverviewComponent,
+    TopupComponent,
     SendmailComponent
   ],
   imports: [

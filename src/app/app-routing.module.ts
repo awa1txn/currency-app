@@ -11,7 +11,7 @@ import { NotificationComponent } from './notification/notification.component'
 import { UserprofileComponent } from './userprofile/userprofile.component'
 import { SettingsComponent } from './userprofile/settings/settings.component';
 import { WalletComponent } from './userprofile/wallet/wallet.component';
-import { OverviewComponent } from './userprofile/overview/overview.component';
+import { TopupComponent } from './userprofile/topup/topup.component';
 import { SendmailComponent } from './sendmail/sendmail.component';
 import { UserResolver } from './user.resolver';
 import { UserWalletResolver } from './user-wallet.resolver';
@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'userprofile', component: UserprofileComponent, resolve: { user: UserResolver } },
   { path: 'wallet', component: WalletComponent, resolve: { user: UserWalletResolver } },
   { path: 'settings', component: SettingsComponent },
-  { path: 'overview', component: OverviewComponent },
+  { path: 'topup', component: TopupComponent },
   { path: 'sendmail', component: SendmailComponent },
 
 ];

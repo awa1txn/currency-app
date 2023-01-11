@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, UntypedFormBuilder, Validators} from '@angular/forms';
 import { UserService } from '../user.service'
 import { AppComponent } from '../app.component'
+import { Router } from '@angular/router';
 
 interface Purpose {
   value: string;
@@ -14,10 +15,14 @@ interface Purpose {
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  contactSign: any = this.fb.group({
+  
+  purposeValue: string | undefined;
+
+  contactSign1: any = this.fb.group({
     name: [''],
     email: [''],
-    purpose: [''],
+  })
+  contactSign2: any = this.fb.group({
     subject: [''],
     message: [''],
   })
@@ -29,14 +34,16 @@ export class ContactComponent implements OnInit {
     {value: '2', viewValue: 'Advertising'},
   ];
 
-  constructor(private us: UserService, private ac:AppComponent, private fb: UntypedFormBuilder) {  }
-
-  changePurpose(id:number):void{
-    this.contactSign.value.purpose = this.purposes[id].viewValue
-  }
+  constructor(private us: UserService, private ac:AppComponent, private fb: UntypedFormBuilder, private router:Router) {  }
 
   signContact():void{
-    console.log(this.contactSign.value)
+    let contact = {
+      ...this.contactSign1.value,
+      purpose: this.purposeValue,
+      ...this.contactSign2.value
+    }
+  console.log(contact)
+  this.us.ContactToOwner(contact).subscribe(res=>{console.log(res);this.router.navigate(['/'])})
   }
 
   ngOnInit(): void {

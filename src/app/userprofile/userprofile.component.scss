@@ -15,7 +15,7 @@
     max-width: 150px;
     height: 20;
 }
-.item-a>div>div:nth-child(even) {
+.item-a>div>div {
     display: flex;
     justify-content: center;
 }
