@@ -46,6 +46,7 @@ export class RegisterComponent implements OnInit {
           data => {
             this.userForm = data;
             localStorage.setItem('your_id', this.userForm.id);
+            localStorage.setItem('your_nickname', this.userForm.nickname);
             // console.log(this.userForm)
             this.router.navigate(['/'])
           }

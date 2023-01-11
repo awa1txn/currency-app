@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
             console.log("succesful login")
             console.log(this.users.find((user: { nickname: string;}) => user.nickname === nickname).id)
             localStorage.setItem('your_id', this.users.find((user: { nickname: string;}) => user.nickname === nickname).id.toString());
+            localStorage.setItem('your_nickname', this.users.find((user: { nickname: string;}) => user.nickname === nickname).nickname.toString());
             this.router.navigate(['/'])
           } else {
             console.log('unsuccesful login')

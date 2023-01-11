@@ -35,3 +35,8 @@ canvas{
     max-height: 400px;
     max-width: 60%;
 }
+
+::ng-deep .userpp {
+	width: 100%;
+	height: auto;
+}
