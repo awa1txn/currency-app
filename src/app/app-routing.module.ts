@@ -15,6 +15,10 @@ import { TopupComponent } from './userprofile/topup/topup.component';
 import { SendmailComponent } from './sendmail/sendmail.component';
 import { UserResolver } from './user.resolver';
 import { UserWalletResolver } from './user-wallet.resolver';
+import { MsgArchieveComponent } from './mailbox/msg-archieve/msg-archieve.component';
+import { MsgBookmarkedComponent } from './mailbox/msg-bookmarked/msg-bookmarked.component';
+import { MsgDeletedComponent } from './mailbox/msg-deleted/msg-deleted.component';
+import { MsgSendComponent } from './mailbox/msg-send/msg-send.component';
 
 
 const routes: Routes = [
@@ -30,7 +34,10 @@ const routes: Routes = [
   { path: 'wallet', component: WalletComponent, resolve: { user: UserWalletResolver } },
   { path: 'settings', component: SettingsComponent },
   { path: 'topup', component: TopupComponent },
-  { path: 'sendmail', component: SendmailComponent },
+  { path: 'msgsend', component: MsgSendComponent },
+  { path: 'msgbookmark', component: MsgBookmarkedComponent },
+  { path: 'msgarchieve', component: MsgArchieveComponent },
+  { path: 'msgdeleted', component: MsgDeletedComponent },
 
 ];
 

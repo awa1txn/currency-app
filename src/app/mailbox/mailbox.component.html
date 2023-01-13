@@ -1,8 +1,8 @@
 <div>
-    <button mat-icon-button aria-label="Example icon-button with a heart icon"><mat-icon>send</mat-icon></button>
-    <button mat-icon-button aria-label="Example icon-button with a heart icon"><mat-icon>archive</mat-icon></button>
-    <button mat-icon-button aria-label="Example icon-button with a heart icon"><mat-icon>bookmark</mat-icon></button>
-    <button mat-icon-button aria-label="Example icon-button with a heart icon"><mat-icon>delete</mat-icon></button>
+    <button mat-icon-button aria-label="Example icon-button with a heart icon" routerLink="/msgsend"><mat-icon>send</mat-icon></button>
+    <button mat-icon-button aria-label="Example icon-button with a heart icon" routerLink="/msgarchieve"><mat-icon>archive</mat-icon></button>
+    <button mat-icon-button aria-label="Example icon-button with a heart icon" routerLink="/msgbookmark"><mat-icon>bookmark</mat-icon></button>
+    <button mat-icon-button aria-label="Example icon-button with a heart icon" routerLink="/msgdeleted"><mat-icon>delete</mat-icon></button>
 </div>
 <div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
