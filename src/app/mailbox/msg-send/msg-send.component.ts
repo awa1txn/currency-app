@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
+import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-msg-send',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MsgSendComponent implements OnInit {
 
-  constructor() { }
+  constructor(private us: UserService, private ac:AppComponent,) { }
 
   ngOnInit(): void {
+    this.us.LoggedInNavBar()
+    if(localStorage.getItem('loggedIn') == '1'){
+    Promise.resolve().then(()=>{this.ac._$isLogged = true;})
   }
 
+}
 }

@@ -1,1 +1,27 @@
-<p>msg-send works!</p>
+<div>
+<h3>Send message to friends, if they exist :)</h3>
+<p>Well.. </p>
+<form>
+<p>
+    <mat-form-field class="example-full-width" style="width:200px">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput placeholder="Ex. pat@example.com" formControlName="email">
+  </mat-form-field>
+</p>
+<p>
+    <mat-form-field appearance="legacy">
+        <mat-label>Subject</mat-label>
+        <input matInput placeholder="Name" formControlName="subject">
+      </mat-form-field>
+</p>
+<p>
+    <mat-form-field class="example-full-width" style="width: 500px">
+        <mat-label>Send message</mat-label>
+        <textarea matInput placeholder="Ex. It makes me feel..." formControlName="message"></textarea>
+    </mat-form-field>
+</p>
+<p>
+    <button mat-raised-button color="primary">Send</button>
+</p>
+</form>
+</div>
