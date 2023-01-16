@@ -20,6 +20,9 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
   _$loggedIn: boolean = false;
+  SendMail(id:any, mail:object): Observable<object>{
+    return this.http.patch(API_URL+'people/'+id, {mail}, httpOptions)
+  }
   patchUserAvatar(id:string, avatar:string): Observable<object>{
     return this.http.patch(API_URL+'people/'+id, {avatar}, httpOptions)
   }

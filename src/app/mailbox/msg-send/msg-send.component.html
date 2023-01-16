@@ -1,7 +1,7 @@
 <div>
 <h3>Send message to friends, if they exist :)</h3>
 <p>Well.. </p>
-<form>
+<form [formGroup]="sendMail">
 <p>
     <mat-form-field class="example-full-width" style="width:200px">
     <mat-label>Email</mat-label>
@@ -21,7 +21,7 @@
     </mat-form-field>
 </p>
 <p>
-    <button mat-raised-button color="primary">Send</button>
+    <button mat-raised-button color="primary" (click)="sendingMail()">Send</button>
 </p>
 </form>
 </div>
