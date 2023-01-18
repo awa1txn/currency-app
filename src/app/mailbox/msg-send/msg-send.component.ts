@@ -22,9 +22,17 @@ export class MsgSendComponent implements OnInit {
 
   sendingMail():void{
     this.us.getContent().subscribe(res=>{
-      let userId;
-      this.data = res; this.data.find((el: { email: any; id:any})=>{el.email == this.sendMail.value.email? userId = el.id : ""})
-      this.us.SendMail(userId, this.sendMail.value).subscribe(res=>{console.log(res);this.router.navigate(['mailbox'])})
+      var userId: any;
+      let recipentData = {
+        ...this.sendMail.value
+      }
+      let output;
+      this.data = res; this.data.find((el: { email: any; id:any})=>{el.email == this.sendMail.value.email? userId = el.id : "";})//find persond id by mail
+      recipentData.email = localStorage.getItem('your_email');//equation for recipent
+      recipentData.date = new Date().toString()
+      this.data.find((el: {id:any})=>el.id == userId).mail.push(recipentData);//pushh data to recipent mail
+      output = this.data.find((el: {id:any})=>el.id == userId).mail;
+      this.us.SendMail(userId, output).subscribe(res=>{console.log(res)})//send message function
     })
     
     // this.us.SendMail(sendMail, id).subscribe(res=>{console.log(res);this.router.navigate(['/'])})

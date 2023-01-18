@@ -41,12 +41,13 @@ export class RegisterComponent implements OnInit {
 
       Promise.resolve()
       .then(x => {
-        this.userService.createUser(nickname, password, email, 'user', [{"moneytype":'dollar', "amount": 0}]).subscribe({
+        this.userService.createUser(nickname, password, email, 'user', [{"moneytype":'dollar', "amount": 0}], []).subscribe({
           next: 
           data => {
             this.userForm = data;
             localStorage.setItem('your_id', this.userForm.id);
             localStorage.setItem('your_nickname', this.userForm.nickname);
+            localStorage.setItem('your_email', this.userForm.email);
             // console.log(this.userForm)
             this.router.navigate(['/'])
           }

@@ -44,9 +44,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 //services
 import { UserService } from './user.service';
 import { MsgSendComponent } from './mailbox/msg-send/msg-send.component';
-import { MsgArchieveComponent } from './mailbox/msg-archieve/msg-archieve.component';
-import { MsgBookmarkedComponent } from './mailbox/msg-bookmarked/msg-bookmarked.component';
-import { MsgDeletedComponent } from './mailbox/msg-deleted/msg-deleted.component';
 
 
 
@@ -69,9 +66,6 @@ import { MsgDeletedComponent } from './mailbox/msg-deleted/msg-deleted.component
     TopupComponent,
     SendmailComponent,
     MsgSendComponent,
-    MsgArchieveComponent,
-    MsgBookmarkedComponent,
-    MsgDeletedComponent
   ],
   imports: [
     BrowserModule,

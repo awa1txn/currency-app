@@ -20,7 +20,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
   _$loggedIn: boolean = false;
-  SendMail(id:any, mail:object): Observable<object>{
+  SendMail(id:any, mail:object[]): Observable<object>{
     return this.http.patch(API_URL+'people/'+id, {mail}, httpOptions)
   }
   patchUserAvatar(id:string, avatar:string): Observable<object>{
@@ -76,13 +76,14 @@ export class UserService {
     return this.userList;
 }
 
-  createUser(nickname: string, password: string, email: string, avatar: string, wallet: object[]): Observable<object> {
+  createUser(nickname: string, password: string, email: string, avatar: string, wallet: object[], mail:object[]): Observable<object> {
     return this.http.post<object>(API_URL + 'people', {
       nickname,
       password,
       email,
       avatar,
-      wallet
+      wallet,
+      mail
     }, httpOptions)
 }
    ContactToOwner(message:object): Observable<object> {

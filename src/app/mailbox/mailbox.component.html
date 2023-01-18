@@ -1,25 +1,25 @@
 <div>
     <button mat-icon-button aria-label="Example icon-button with a heart icon" routerLink="/msgsend"><mat-icon>send</mat-icon></button>
-    <button mat-icon-button aria-label="Example icon-button with a heart icon" routerLink="/msgarchieve"><mat-icon>archive</mat-icon></button>
-    <button mat-icon-button aria-label="Example icon-button with a heart icon" routerLink="/msgbookmark"><mat-icon>bookmark</mat-icon></button>
-    <button mat-icon-button aria-label="Example icon-button with a heart icon" routerLink="/msgdeleted"><mat-icon>delete</mat-icon></button>
 </div>
 <div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
-      
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Sender </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
         <!-- Name Column -->
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef> Topic </th>
-          <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+        <ng-container matColumnDef="subject">
+          <th mat-header-cell *matHeaderCellDef> Subject </th>
+          <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
         </ng-container>
       
         <!-- Weight Column -->
-        <ng-container matColumnDef="weight">
-          <th mat-header-cell *matHeaderCellDef> Description </th>
-          <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+        <ng-container matColumnDef="message">
+          <th mat-header-cell *matHeaderCellDef> Message </th>
+          <td mat-cell *matCellDef="let element"> {{element.message}} </td>
         </ng-container>
       
         <!-- Symbol Column -->
