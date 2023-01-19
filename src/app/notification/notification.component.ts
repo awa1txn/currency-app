@@ -8,13 +8,18 @@ import { AppComponent } from '../app.component'
   styleUrls: ['./notification.component.scss']
 })
 export class NotificationComponent implements OnInit {
-
-  friendName = '{{friendName}}'
+  data:any;
 
   constructor(private us: UserService, private ac:AppComponent) { }
 
+
   ngOnInit(): void {
-    
+
+    this.us.getNotifications().subscribe(res=>{
+      this.data=res;
+      console.log(this.data)
+    })
+
     this.us.LoggedInNavBar()
     if(localStorage.getItem('loggedIn') == '1'){
     Promise.resolve().then(()=>{this.ac._$isLogged = true;})

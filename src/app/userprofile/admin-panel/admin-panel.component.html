@@ -1,0 +1,22 @@
+<mat-accordion class="example-headers-align">
+      <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Send notification to everyone
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <form [formGroup]="sendNotif">
+          <mat-form-field appearance="fill">
+            <mat-label>Topic</mat-label>
+            <input matInput formControlName="topic">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Message</mat-label>
+            <input matInput formControlName="message">
+          </mat-form-field>
+          </form>
+          <mat-action-row>
+            <button mat-button color="primary" (click)="sendNotification()">Apply</button>
+          </mat-action-row>
+        </mat-expansion-panel>
+  </mat-accordion>

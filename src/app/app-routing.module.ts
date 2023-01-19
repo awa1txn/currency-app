@@ -13,8 +13,10 @@ import { SettingsComponent } from './userprofile/settings/settings.component';
 import { WalletComponent } from './userprofile/wallet/wallet.component';
 import { TopupComponent } from './userprofile/topup/topup.component';
 import { UserResolver } from './user.resolver';
+import { isAdmin } from './isAdmin.service'
 import { UserWalletResolver } from './user-wallet.resolver';
 import { MsgSendComponent } from './mailbox/msg-send/msg-send.component';
+import { AdminPanelComponent } from './userprofile/admin-panel/admin-panel.component';
 
 
 const routes: Routes = [
@@ -31,7 +33,7 @@ const routes: Routes = [
   { path: 'settings', component: SettingsComponent },
   { path: 'topup', component: TopupComponent },
   { path: 'msgsend', component: MsgSendComponent },
-
+  { path: 'adminpanel', component: AdminPanelComponent, canActivate:[isAdmin] },
 ];
 
 @NgModule({

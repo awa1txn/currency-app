@@ -44,6 +44,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 //services
 import { UserService } from './user.service';
 import { MsgSendComponent } from './mailbox/msg-send/msg-send.component';
+import { AdminPanelComponent } from './userprofile/admin-panel/admin-panel.component';
 
 
 
@@ -66,6 +67,7 @@ import { MsgSendComponent } from './mailbox/msg-send/msg-send.component';
     TopupComponent,
     SendmailComponent,
     MsgSendComponent,
+    AdminPanelComponent,
   ],
   imports: [
     BrowserModule,

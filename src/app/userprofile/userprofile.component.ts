@@ -10,7 +10,7 @@ import { Chart, ChartConfiguration, ChartItem, registerables} from 'node_modules
   styleUrls: ['./userprofile.component.scss', "../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css" ]
 })
 export class UserprofileComponent implements OnInit {
-
+  admin:string = 'admin';
   data: any;
   users: object | undefined;
   constructor(private us: UserService, private ac:AppComponent, private router: Router, private route: ActivatedRoute) {}

@@ -20,6 +20,20 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
   _$loggedIn: boolean = false;
+
+  isAdmin():any{
+    if(localStorage.getItem('your_role') === 'admin'){
+      return true
+    } else {
+      return false
+    }
+  }
+  notificationPost(message:object): Observable<object> {
+    return this.http.post<object>(API_URL + 'notification', message, httpOptions)
+  }
+  getNotifications(): Observable<object> {
+    return this.http.get<object>(API_URL + `notification/`)
+}
   SendMail(id:any, mail:object[]): Observable<object>{
     return this.http.patch(API_URL+'people/'+id, {mail}, httpOptions)
   }
@@ -76,14 +90,16 @@ export class UserService {
     return this.userList;
 }
 
-  createUser(nickname: string, password: string, email: string, avatar: string, wallet: object[], mail:object[]): Observable<object> {
+  createUser(nickname: string, password: string, email: string, avatar: string, wallet: object[], mail:object[], notifications:object[], userRole:string): Observable<object> {
     return this.http.post<object>(API_URL + 'people', {
       nickname,
       password,
       email,
       avatar,
       wallet,
-      mail
+      mail,
+      notifications,
+      userRole
     }, httpOptions)
 }
    ContactToOwner(message:object): Observable<object> {

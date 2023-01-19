@@ -1,3 +1,6 @@
 table{
     width: 100%;
 }
+::ng-deep td{
+    padding: 5px 20px!important;
+}
