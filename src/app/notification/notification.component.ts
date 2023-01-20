@@ -17,7 +17,6 @@ export class NotificationComponent implements OnInit {
 
     this.us.getNotifications().subscribe(res=>{
       this.data=res;
-      console.log(this.data)
     })
 
     this.us.LoggedInNavBar()
